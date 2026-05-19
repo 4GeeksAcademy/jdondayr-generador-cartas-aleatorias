@@ -36,3 +36,24 @@ body {margin: 0;}
     .icon:nth-child(3) {
         align-self: end
     }
+
+/* Generate random cards button */
+#generateRandomCardButton {
+    padding: 1rem;
+    font: bold 1rem "Times New Roman";
+    box-shadow: 2px 2px 4px black;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    transition: all 0.5s ease;
+}
+#generateRandomCardButton:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+#generateRandomCardButton:active {
+    box-shadow: none;
+    background-color: rgb(176, 175, 175);
+}

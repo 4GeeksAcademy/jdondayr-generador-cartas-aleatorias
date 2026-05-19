@@ -1,6 +1,7 @@
 // Variables
 const number = document.querySelector("#number");
-let icons = document.querySelectorAll(".icon");
+const icons = document.querySelectorAll(".icon");
+const generateRandomCardButton = document.querySelector("#generateRandomCardButton");
 
 const numbersPossibilities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // Posibilidad de números
 const iconsPossibilities = ["♦", "♥", "♠", "♣"]; // Posibilidad de iconos
@@ -11,11 +12,11 @@ const getRandomElementFromArray = (array) => {
 }
 
 // Onload function
-window.addEventListener("load", (event) => {
+generateRandomCardButton.addEventListener("click", (event) => {
   number.innerHTML = getRandomElementFromArray(numbersPossibilities);
   const randomIcon = getRandomElementFromArray(iconsPossibilities)
   icons.forEach(icon => {
     if (randomIcon === "♦" || randomIcon === "♥") icon.style.color = "red"; // Si es de diamantes o corazones, los iconos son rojos
     icon.innerHTML = randomIcon;
   });
-})
+});
