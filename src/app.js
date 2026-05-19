@@ -4,7 +4,6 @@ let icons = document.querySelectorAll(".icon");
 
 const numbersPossibilities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // Posibilidad de números
 const iconsPossibilities = ["♦", "♥", "♠", "♣"]; // Posibilidad de iconos
-const cardClasses = []
 
 // Get Random Element Function
 const getRandomElementFromArray = (array) => {
