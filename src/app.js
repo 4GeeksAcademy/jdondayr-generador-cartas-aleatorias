@@ -17,6 +17,7 @@ generateRandomCardButton.addEventListener("click", (event) => {
   const randomIcon = getRandomElementFromArray(iconsPossibilities)
   icons.forEach(icon => {
     if (randomIcon === "♦" || randomIcon === "♥") icon.style.color = "red"; // Si es de diamantes o corazones, los iconos son rojos
+    else icon.style.color = "black";
     icon.innerHTML = randomIcon;
   });
 });
