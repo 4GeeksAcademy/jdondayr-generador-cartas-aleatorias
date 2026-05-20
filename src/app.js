@@ -11,7 +11,7 @@ const getRandomElementFromArray = (array) => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// Onload function
+// Generate random card button function
 generateRandomCardButton.addEventListener("click", (event) => {
   number.innerHTML = getRandomElementFromArray(numbersPossibilities);
   const randomIcon = getRandomElementFromArray(iconsPossibilities)
