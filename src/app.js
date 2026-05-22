@@ -2,6 +2,7 @@
 const number = document.querySelector("#number");
 const icons = document.querySelectorAll(".icon");
 const generateRandomCardButton = document.querySelector("#generateRandomCardButton");
+const generateEvery3secondsButton = document.querySelector("#generateEvery3secondsButton");
 const backgroundColorSelect = document.querySelector("#backgroundColorSelect");
 const container = document.querySelector("#container");
 
@@ -27,8 +28,19 @@ const generateRandomCard = () => {
 }
 generateRandomCardButton.addEventListener("click", generateRandomCard);
 
-// Generate random card every 10 seconds
-setInterval(generateRandomCard, 10000);
+// Generate random card every 3 seconds if the button is active
+let generateEvery3secondsButtonActive = false;
+let generateEvery3secondsButtonInterval = null;
+generateEvery3secondsButton.addEventListener("click", () => {
+  generateEvery3secondsButtonActive = !generateEvery3secondsButtonActive;
+  if (generateEvery3secondsButtonActive) {
+    generateEvery3secondsButtonInterval = setInterval(generateRandomCard, 3000);
+    generateEvery3secondsButton.style.background = "#464742";
+    return;
+  }
+  generateEvery3secondsButton.style.background = "black";
+  clearInterval(generateEvery3secondsButtonInterval);
+})
 
 // Background color function
 backgroundColorSelect.addEventListener("change", () => {

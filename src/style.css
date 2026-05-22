@@ -55,7 +55,7 @@ body {margin: 0;}
 }
 
 /* Generate random cards button */
-#generateRandomCardButton {
+button {
     padding: 1rem;
     font: bold 1rem "Times New Roman";
     box-shadow: 2px 2px 4px black;
@@ -65,12 +65,12 @@ body {margin: 0;}
     color: white;
     transition: all 0.5s ease;
 }
-#generateRandomCardButton:hover {
+button:hover {
     background-color: white;
     color: black;
     cursor: pointer;
 }
-#generateRandomCardButton:active {
+button:active {
     box-shadow: none;
     background-color: rgb(176, 175, 175);
 }
