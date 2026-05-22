@@ -15,7 +15,7 @@ const getRandomElementFromArray = (array) => {
 }
 
 // Generate random card button function
-generateRandomCardButton.addEventListener("click", (event) => {
+const generateRandomCard = () => {
   number.innerHTML = getRandomElementFromArray(numbersPossibilities);
   number.style.color = getRandomElementFromArray(numberColorsPossibilities);
   const randomIcon = getRandomElementFromArray(iconsPossibilities)
@@ -24,7 +24,11 @@ generateRandomCardButton.addEventListener("click", (event) => {
     else icon.style.color = "black";
     icon.innerHTML = randomIcon;
   });
-});
+}
+generateRandomCardButton.addEventListener("click", generateRandomCard);
+
+// Generate random card every 10 seconds
+setInterval(generateRandomCard, 10000);
 
 // Background color function
 backgroundColorSelect.addEventListener("change", () => {
@@ -47,3 +51,4 @@ backgroundColorSelect.addEventListener("change", () => {
 
   }
 })
+
