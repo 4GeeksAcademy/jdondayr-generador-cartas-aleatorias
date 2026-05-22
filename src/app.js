@@ -3,8 +3,10 @@ const number = document.querySelector("#number");
 const icons = document.querySelectorAll(".icon");
 const generateRandomCardButton = document.querySelector("#generateRandomCardButton");
 const generateEvery3secondsButton = document.querySelector("#generateEvery3secondsButton");
+const changeCardSizeButton = document.querySelector("#changeCardSizeButton");
 const backgroundColorSelect = document.querySelector("#backgroundColorSelect");
 const container = document.querySelector("#container");
+const card = document.querySelector("#card");
 
 const numbersPossibilities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // Posibilidad de números
 const iconsPossibilities = ["♦", "♥", "♠", "♣"]; // Posibilidad de iconos
@@ -47,20 +49,28 @@ backgroundColorSelect.addEventListener("change", () => {
   switch (backgroundColorSelect.value) {
     case "green":
       container.style = "background: green;";
-    break;
+      break;
     case "red":
       container.style = "background: red;";
-    break;
+      break;
     case "blue":
       container.style = "background: blue;";
-    break;
+      break;
     case "yellow":
       container.style = "background: yellow;";
-    break;
+      break;
     case "black":
       container.style = "background: black;";
-    break;
+      break;
 
   }
 })
 
+// User change the width and height of the card using inputs
+const changeWidthAndHeightOfCard = () => {
+  let cardHeight = document.querySelector("#cardHeight").value;
+  let cardWidth = document.querySelector("#cardWidth").value;
+  card.style.width = cardWidth + "px";
+  card.style.height = cardHeight + "px";
+}
+changeCardSizeButton.addEventListener("click", changeWidthAndHeightOfCard);
